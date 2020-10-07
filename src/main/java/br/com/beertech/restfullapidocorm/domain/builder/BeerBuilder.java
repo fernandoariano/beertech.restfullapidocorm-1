@@ -32,7 +32,7 @@ public final class BeerBuilder implements Builder<Beer> {
 
     @Override
     public Beer builder() {
-        return null;
+        return this.beer;
     }
 
 }

@@ -12,7 +12,7 @@
 	<artifactId>restfullapidocorm</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>restfullapidocorm </name>
+	<name>restfullapidocorm</name>
 	<description>Project beertech</description>
 
 	<properties>
