@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public final class BeerBuilder implements Builder<Beer> {
 
-  private Beer beer;
+  private Beer beer = new Beer();
 
     private BeerBuilder() {
     }
@@ -34,5 +34,7 @@ public final class BeerBuilder implements Builder<Beer> {
     public Beer builder() {
         return this.beer;
     }
+
+
 
 }

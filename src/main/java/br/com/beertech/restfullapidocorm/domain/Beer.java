@@ -1,9 +1,6 @@
 package br.com.beertech.restfullapidocorm.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -14,8 +11,8 @@ public class Beer implements Serializable {
 
     @Id
     @Column(name = "id_beer")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBeer;
-
     private String name;
     private BigDecimal price;
 
