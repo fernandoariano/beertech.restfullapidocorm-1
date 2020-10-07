@@ -17,7 +17,7 @@ tags:
   description: First Challenge API DOC BeertechTalents
 
 paths:
-  /beer:
+  /beer/save:
     post:
       tags:
       - beer
@@ -58,7 +58,7 @@ paths:
           description: Invalid ID supplied
         404:
           description: Beertech not found
-  /beer/{idBeer}:
+  /beer/{id}:
     get:
       tags:
       - beer
@@ -68,7 +68,7 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: idBeer
+      - name: id
         in: path
         description: ID of beer to return
         required: true
@@ -91,7 +91,7 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: idBeer
+      - name: id
         in: path
         description: ID of the beer object that needs to be deleted
         required: true
@@ -103,15 +103,31 @@ paths:
           description: Invalid ID supplied
         404:
           description: Beer not found
+  /beer/listAll:
+    get:
+      tags:
+      - beer
+      summary: List all beers
+      operationId: getBeers
+      description: Returns all beers
+      produces:
+      - application/json
+      responses:
+        200:
+            description: Search results
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/beer'
 definitions:
   beer:
     type: object
     required:
-    - idBeer
+    - id
     - name
     - price
     properties:
-      idBeer:
+      id:
         type: integer
         description: ID of the beer
         format: Long
