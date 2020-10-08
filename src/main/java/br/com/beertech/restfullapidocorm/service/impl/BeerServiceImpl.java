@@ -19,8 +19,20 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public Beer saveOrUpdate(Beer beer) {
+    public Beer save(Beer beer) {
         return beerRepository.save(beer);
+    }
+
+    @Override
+    public Beer update(Long idBeer, Beer beer) {
+        return updateBeer(idBeer, beer);
+    }
+
+    private Beer updateBeer(Long idBeer, Beer beer){
+        Beer beerFinded = getBeerById(idBeer);
+        beerFinded.setName(beer.getName());
+        beerFinded.setPrice(beer.getPrice());
+        return beerFinded;
     }
 
     @Override
@@ -31,6 +43,11 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public List<Beer> listAll() {
         return beerRepository.findAll();
+    }
+
+    @Override
+    public Beer findBeerByName(String nameBeer) {
+        return beerRepository.findByName(nameBeer);
     }
 
     private Beer getBeerById(Long idBeer) {

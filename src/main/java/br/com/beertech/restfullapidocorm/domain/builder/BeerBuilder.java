@@ -35,6 +35,4 @@ public final class BeerBuilder implements Builder<Beer> {
         return this.beer;
     }
 
-
-
 }

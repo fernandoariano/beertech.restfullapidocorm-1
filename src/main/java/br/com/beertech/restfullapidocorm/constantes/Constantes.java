@@ -10,6 +10,10 @@ public interface Constantes {
         Integer NUMBER_3 = 3;
     }
 
+    interface Messages {
+        String REGISTRY_NOT_FOUND = "Registry Not Found!";
+    }
+
     interface Products {
         String ANTARTICA_SUZ_ZERO = "Antarctica Sub-Zero";
         String CARACU = "Caracu";

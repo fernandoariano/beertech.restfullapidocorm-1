@@ -6,11 +6,14 @@ import java.util.List;
 
 public interface BeerService {
 
-    Beer saveOrUpdate(Beer beer);
+    Beer save(Beer beer);
+
+    Beer update(Long idBeer, Beer beer);
 
     void delete(Long idBeer);
 
     List<Beer> listAll();
 
+    Beer findBeerByName(String nameBeer);
 
 }
